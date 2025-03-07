@@ -1,4 +1,4 @@
-# <h1 align="center">
+
 <div align="center">
   <h2>Enabling Reproducible Research in Batch Chemical Processes</h2>
   <p>A Privacy-Preserving Preprocessing Pipeline, Benchmark Datasets, and Spatiotemporal Kinetic Modeling</p>
