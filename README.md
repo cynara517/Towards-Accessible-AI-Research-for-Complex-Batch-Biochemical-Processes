@@ -90,6 +90,7 @@
 
 ### **🔧Workflow**
 ```mermaid
+graph LR
     A[Raw Time-Series Data] --> B(SCFCM Clustering)
     B --> C{(Missing_Data_Imputation)}
     C --> C1(MIC_Pairwise)
