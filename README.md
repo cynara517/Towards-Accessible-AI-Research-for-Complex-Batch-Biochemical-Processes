@@ -90,13 +90,15 @@
 
 ### **🔧Workflow**
 ```mermaid
-graph LR
-    A[Raw Time-Series Data] --> B(SCFCM Clustering)
-    B --> C{(Missing_Data_Imputation)}
-    C --> C1(MIC_Pairwise)
-    C --> C2(MIC_Target)
-    C1/C2 --> D[Structured Data] (Normalization)
+flowchart TD;
+    A[Raw Time-Series Data] -->|SCFCM Clustering| B;
+    B -->|Missing Data Imputation| C;
+    C -->|MIC Pairwise| C1;
+    C -->|MIC Target| C2;
+    C1 -->|Normalization| D[Structured Data];
+    C2 -->|Normalization| D;
 ```
+
 
 ---
 
