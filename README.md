@@ -3,7 +3,11 @@
   <h2>Enabling Reproducible Research in Batch Chemical Processes</h2>
   <p>A Privacy-Preserving Preprocessing Pipeline, Benchmark Datasets, and Spatiotemporal Kinetic Modeling</p>
 </div>
-
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python">
+  <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.0+-red?logo=pytorch">
+  <img alt="License" src="https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey">
+</p>
 ---
 
 ## 🌟 Key Contributions
