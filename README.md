@@ -6,7 +6,7 @@
 <p align="center">
   <img alt="GitHub" src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python">
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.0+-red?logo=pytorch">
-  <img alt="License" src="https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-lightgrey">
 </p>
 ---
 
