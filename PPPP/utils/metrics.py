@@ -26,7 +26,7 @@ def scores(y_true, y_predict):
     }
 
 
-# 如果 y_true 和 y_predict 是 PyTorch 张量，可以直接使用下面的函数
+
 def tensor_scores(y_true, y_predict):
     '''
     计算PyTorch张量形式的时间序列生成任务评价指标
