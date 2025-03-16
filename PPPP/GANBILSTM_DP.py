@@ -63,7 +63,6 @@ def predict():
     ).to(device)
     generator.eval()
 
-    # 加载checkpoint（兼容GAN模式和普通模式）
     checkpoint = torch.load(opt.resume_path, map_location=device)
     if 'generator_state_dict' in checkpoint:
         generator.load_state_dict(checkpoint['generator_state_dict'], strict=False)
@@ -90,7 +89,6 @@ def predict():
     # 拼接结果
     y_predict = torch.cat(y_predict, dim=0).numpy()
     y_true = torch.cat(y_true, dim=0).numpy()
-    # 将每个样本的时序输出展平为 (step*7) 维向量
     y_predict_flat = y_predict.reshape(y_predict.shape[0], -1)
     y_true_flat = y_true.reshape(y_true.shape[0], -1)
 
@@ -98,9 +96,6 @@ def predict():
     met = metrics.scores(y_true_flat, y_predict_flat)
     print(f"Test Metrics: {met}")
 
-
-
-    # 保存结果
     # 读取原始数据
     df = pd.read_csv(opt.data_dir)
 
@@ -108,9 +103,7 @@ def predict():
     step = opt.time_tri  # 假设此处 step 与 opt.time_tri 一致
     df = df.iloc[2 * step - 1:].reset_index(drop=True)
 
-    # 检查一下 df 的长度是否和预测样本数匹配
-    # last_step_pred 的形状应为 (num_samples, 7)
-    last_step_pred = y_predict[:, -1, :]  # 如果你希望保存预测窗口最后一时刻的全部7个特征
+    last_step_pred = y_predict[:, -1, :]  
 
     # 此时，df 的行数应与 last_step_pred.shape[0] 一致
     if df.shape[0] != last_step_pred.shape[0]:
