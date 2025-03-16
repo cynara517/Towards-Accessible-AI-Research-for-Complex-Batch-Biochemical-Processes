@@ -12,8 +12,8 @@ from sdv.single_table import CTGANSynthesizer
 from sdv.metadata import SingleTableMetadata
 from sdv.sampling import Condition
 
-# 注意：这里不再在 loader 文件中直接转移到 GPU
-device = opt.device  # 可保留，但不在数据加载时使用
+
+device = opt.device 
 
 def transform_dataset(x_data, y_data, n_input, n_output):
     """
@@ -21,7 +21,6 @@ def transform_dataset(x_data, y_data, n_input, n_output):
       - 输入为连续 n_input 步，每步包含所有特征；
       - 输出为接下来的 n_output 步，每步包含所有特征。
     """
-    # 如果 y_data 是一维数组，将其转换为二维数组（列向量）
     if y_data.ndim == 1:
         y_data = y_data.reshape(-1, 1)
 
