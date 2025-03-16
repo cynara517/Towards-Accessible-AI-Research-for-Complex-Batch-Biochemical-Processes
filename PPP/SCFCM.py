@@ -1,12 +1,10 @@
 import pandas as pd
 import numpy as np
-from fcmeans import FCM  # 模糊C均值算法库，可以通过pip安装
-
+from fcmeans import FCM 
 # 读取数据集
 df = pd.read_csv('/Users/shifanchen/Documents/WorkSpace/TII/EP#1234_Get/EP_Batch_270.csv')
 
-# 假设需要聚类的数据列是 'te'
-data = df[['te']].values
+data = df[['X15']].values
 
 # 初始化 FCM 聚类模型，设定簇的个数 (m为批次数)
 m = 270  # 例如，设定为EP的批次数
