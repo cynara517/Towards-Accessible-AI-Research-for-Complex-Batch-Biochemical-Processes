@@ -44,7 +44,7 @@ def select_top_variables(mic_values, num_variables):
     return top_variables
 
 
-# 示例：读取数据集
+# 读取数据集
 df = pd.read_csv('/home/home_new/chensf/WorkSpace/TII/EP#1234_Get/EP#1.csv')
 
 # 计算所有变量对之间的MIC值
