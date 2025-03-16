@@ -23,11 +23,11 @@ disc_rnn_layers = 2     # 判别器层数
 disc_dropout = 0.3      # 判别器Dropout
 
 # ========== GAN训练参数 ==========
-gan_lambda = 0.1        # 废弃参数（改用adv_weight）
-recon_weight = 1.0      # 重构损失权重（新増）
-adv_weight = 0.1        # 对抗损失权重（对应原gan_lambda）
-cosine_weight = 0.2     # 余弦相似度权重（新増）
-use_focal = True        # 是否使用Focal Loss（新増）
+gan_lambda = 0.1        # 废弃参数
+recon_weight = 1.0      # 重构损失权重
+adv_weight = 0.1        # 对抗损失权重
+cosine_weight = 0.2     # 余弦相似度权重
+use_focal = True        # 是否使用Focal Loss
 alpha = 0.75            # Focal Loss参数
 gamma = 2               # Focal Loss参数
 weight_decay=1e-2
@@ -44,7 +44,7 @@ disc_noise_multiplier = 1.5
 
 
 # ========== 优化器参数 ==========
-LEARNING_RATE = 1e-3    # 废弃（改用gen_lr/disc_lr）
+LEARNING_RATE = 1e-3    # 废弃
 gen_lr = 1e-4           # 生成器学习率（新増）
 disc_lr = 2e-4          # 判别器学习率（新増）
 WEIGHT_DECAY = 1e-2     # 生成器权重衰减
@@ -53,7 +53,7 @@ disc_weight_decay = 1e-3# 判别器权重衰减（新増）
 # ========== 训练配置 ==========
 batch_size = 128
 epochs = 50
-num_workers = 2      # 建议改为num_workers（保持PyTorch惯例）
+num_workers = 2      # 建议改为num_workers
 accumulation_step = 1   # 梯度累加步数
 device = "cuda" if torch.cuda.is_available() else "cpu"
 optimizer = "adamw"     # 优化器类型
@@ -73,8 +73,8 @@ filename = "dataname"   # 数据集标识
 # ========== 模型存储 ==========
 keep = True             # 是否保存模型
 resume = False          # 是否加载checkpoint
-resume_path = "./weights/best_model.pth"  # 普通模式加载路径
+resume_path = "./weights/best_model.pth"  
 checkpoint_dir = "./weights"
-useGAN_weights = False  # 是否加载预训练GAN
-GAN_path = "./weights/ganmodel.pkl"      # GAN预训练路径
-NAME = "GANBILSTM"      # 模型名称（影响保存文件名）
+useGAN_weights = False  
+GAN_path = "./weights/ganmodel.pkl"     
+NAME = "GANBILSTM"     
