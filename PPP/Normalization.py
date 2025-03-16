@@ -31,7 +31,6 @@ def z_normalize(df):
     scaler = StandardScaler()
     columns_to_normalize = [col for col in df.columns if col != 'Batch' and col != 'Time(h)']  # 除了'Batch'和'Time(h)'列
 
-    # 对每个Batch进行Z归一化
     df_copy = df.copy()
     for batch in df['Batch'].unique():
         batch_data = df_copy[df_copy['Batch'] == batch]
